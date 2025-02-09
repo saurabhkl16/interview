@@ -1,0 +1,14 @@
+<p>template-driven works!</p>
+<form #loginForm="ngForm" (ngSubmit)="getLoginDetails(loginForm)">
+  <div class="email">
+    <label for="e-mail"></label>
+    <input name="e-mail" type="text" ngModel required="true" />
+  </div>
+  <div class="password">
+    <label for="pass"></label>
+    <input name="pass" type="text" ngModel required="true" />
+  </div>
+  <div class="submit">
+    <button type="submit">Submit</button>
+  </div>
+</form>

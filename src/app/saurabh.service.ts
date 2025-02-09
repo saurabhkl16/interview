@@ -1,17 +1,26 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-
-const userProfileUrl: string = 'assets/skl.json';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SaurabhService {
-  // userProfileUrl: string = '/assets/skl.json';
+  private messageSource = new Subject<string>(); // Observable string streams
+  currentMessage$ = this.messageSource.asObservable();
 
   constructor(private http: HttpClient) {}
 
-  getUserProfile() {
-    return this.http.get('/src/assets/skl.json');
+  public getUserProfile() {
+    return this.http.get('http://jsonplaceholder.typicode.com/posts');
+  }
+
+  public getData(): Promise<any> { 
+    return this.http.get('http://jsonplaceholder.typicode.com/posts').toPromise(); 
+  }
+
+  // Service message command
+  changeMessage(message: string) {
+    this.messageSource.next(message);
   }
 }

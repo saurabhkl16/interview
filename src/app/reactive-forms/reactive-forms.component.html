@@ -1,0 +1,14 @@
+<p>reactive-forms works!</p>
+<form [formGroup]="reactiveForm" (ngSubmit)="submitReactiveForm()">
+  <div class="name">
+    <label for="name"></label>
+    <input type="text" formControlName="name" />
+  </div>
+  <div class="password">
+    <label for="password"></label>
+    <input type="text" formControlName="password" />
+  </div>
+  <div class="submit">
+    <button type="submit">Submit</button>
+  </div>
+</form>
