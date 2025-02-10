@@ -1,0 +1,13 @@
+<p>signal works!</p>
+
+<h2>Simple property</h2>
+<h5>Name:{{ FirstName() }}</h5>
+<h5>Lastname:{{ LastName() }}</h5>
+<h5>Fullname:{{ FullName() }}</h5>
+<h5>-----------------------------------------------------</h5>
+Name:<input type="text" [value]="FirstName()" #fname /> LastName:<input
+  type="text"
+  [value]="LastName()"
+  #lname
+/>
+<button (click)="updateName(fname.value, lname.value)">Update</button>

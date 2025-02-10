@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { SignalComponent } from './signal/signal.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     RxjsSubjectComponent,
     LifecycleComponent,
     TemplateDrivenComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    SignalComponent
   ],
   imports: [
     BrowserModule,
