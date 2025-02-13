@@ -1,0 +1,8 @@
+<p>promise works!</p>
+<div *ngFor="let item of responce">
+  <ol>
+    <li>{{ item.id }}</li>
+    <li>{{ item.title }}</li>
+  </ol>
+</div>
+<button (click)="getResponse()">Get Data</button>

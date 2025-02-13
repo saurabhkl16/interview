@@ -13,6 +13,9 @@ import { LifecycleComponent } from './lifecycle/lifecycle.component';
 import { TemplateDrivenComponent } from './template-driven/template-driven.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { SignalComponent } from './signal/signal.component';
+import { InterceptorComponent } from './interceptor/interceptor.component';
+import { PromiseComponent } from './promise/promise.component';
+import { ObservableComponent } from './observable/observable.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { SignalComponent } from './signal/signal.component';
     LifecycleComponent,
     TemplateDrivenComponent,
     ReactiveFormsComponent,
-    SignalComponent
+    SignalComponent,
+    InterceptorComponent,
+    PromiseComponent,
+    ObservableComponent
   ],
   imports: [
     BrowserModule,
