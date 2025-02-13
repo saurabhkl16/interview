@@ -1,13 +1,27 @@
-<p>signal works!</p>
+<p>signal works! {{Firstname}}</p>
 
-<h2>Simple property</h2>
+<h2>{{propert_type}} property</h2>
 <h5>Name:{{ FirstName() }}</h5>
 <h5>Lastname:{{ LastName() }}</h5>
 <h5>Fullname:{{ FullName() }}</h5>
-<h5>-----------------------------------------------------</h5>
 Name:<input type="text" [value]="FirstName()" #fname /> LastName:<input
-  type="text"
-  [value]="LastName()"
-  #lname
+type="text"
+[value]="LastName()"
+#lname
+/>
+<button (click)="updateNameUsingSignal(fname.value, lname.value)">Update</button>
+
+<h5>-----------------------------------------------------------------------------------------------</h5>
+
+<h2>{{propert_type}} property</h2>
+<h5>Name:{{ sFirstName }}</h5>
+<h5>Lastname:{{ sLastName }}</h5>
+<h5>Fullname:{{ sFullName }}</h5>
+Name:<input type="text" [value]="sFirstName" #fname /> sLastName:<input
+type="text"
+[value]="sLastName"
+#lname
 />
 <button (click)="updateName(fname.value, lname.value)">Update</button>
+
+<h5>-----------------------------------------------------------------------------------------------</h5>

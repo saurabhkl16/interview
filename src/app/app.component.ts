@@ -43,25 +43,23 @@ export class AppComponent {
   inputVal: any;
   ngModel: any;
   model: any = {};
-  registerForm!: FormGroup
+  registerForm!: FormGroup;
+  paisa = 12;
 
-  constructor(private saurabh: SaurabhService, private fb: FormBuilder) {}
+  constructor(private saurabhSer: SaurabhService, private fb: FormBuilder) {}
 
   ngOnInit() {
     // this.registerForm = this.fb.group({ name: ['', Validators.required] });
-
     // console.log('userprofile');
-    // this.saurabh.getUserProfile().subscribe((data: any) => {
+    // this.saurabhSer.getUserProfile().subscribe((data: any) => {
     //   console.log('observable', data);
     //   this.respData = data.filter((data: any) => data);
-
-    //   this.saurabh.currentMessage$.subscribe((message) => {
+    //   this.saurabhSer.currentMessage$.subscribe((message) => {
     //     this.message = message;
     //   });
     // });
-
     // console.log('promise');
-    // this.saurabh
+    // this.saurabhSer
     //   .getData()
     //   .then((data) => {
     //     this.posts = data;
@@ -102,5 +100,9 @@ export class AppComponent {
     if (this.registerForm.valid) {
       console.log('Form submitted!', this.registerForm.value);
     }
+  }
+
+  public changePaisaProperty() {
+    this.paisa++;
   }
 }

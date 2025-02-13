@@ -12,11 +12,11 @@ export class LifecycleComponent implements OnChanges {
   private oldValue: any;
 
   constructor() {
-    console.log('Constructor');
+    console.log('Constructor: Component is created');
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('ngOnChanges detected:', changes);
+    console.log('ngOnChanges: Input property changed', changes);
     if (changes['data']) {
       console.log('Previous value:', changes['data'].previousValue);
       console.log('Current value:', changes['data'].currentValue);
@@ -24,27 +24,37 @@ export class LifecycleComponent implements OnChanges {
   }
 
   ngDoCheck() {
+    console.log('ngDoCheck: Change detection running');
     if (this.paisa !== this.oldValue) {
-      console.log('ngDoCheck: Data has changed');
       this.oldValue = this.paisa;
     }
   }
 
   ngOnInit() {
-    console.log('ngOnInit ok');
+    console.log('ngOnInit: Component initialized');
   }
 
   ngAfterContentInit() {
-    console.log('ngAfterContentInit');
+    console.log('ngAfterContentInit: Content projected');
   }
 
   ngAfterContentChecked() {
-    console.log('ngAfterContentChecked');
+    console.log('ngAfterContentChecked: Projected content checked');
   }
+
   ngAfterViewInit() {
-    console.log('ngAfterViewInit');
+    console.log('ngAfterViewInit: Component view initialized');
   }
+
   ngAfterViewChecked() {
-    console.log('ngAfterViewChecked');
+    console.log('ngAfterViewChecked: Component view checked');
+  }
+
+  ngOnDestroy() {
+    console.log('ngOnDestroy: Component is being destroyed');
+  }
+
+  public chnageValue() {
+    this.paisa++;
   }
 }
